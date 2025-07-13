@@ -1,13 +1,16 @@
-Project Name: CampusConnect
 
-**CampusConnect** is a simple social media web platform built for everyone inside the DIU Campus — students, teachers, and staff.  
+## 🚀 [DEMO](https://techterrorproject.github.io/CampusConnect/)
+
+**Project Name: CampusConnect**
+
+**CampusConnect** is a simple social media web platform built for everyone inside the DIU Campus — **students, teachers, and staff**.  
 It’s our Web Engineering course project, designed to bring all campus communication, updates, and sharing into one place.
 
 ---
 
 ## 📌 Why we built CampusConnect
 
-In most universities, updates and information are scattered across Facebook groups, WhatsApp chats, printed notices, or word of mouth.  
+In most universities, updates and information are scattered across Facebook groups, WhatsApp chats, Telegram groups, printed notices, or word of mouth.  
 We wanted to build something just for our campus community — where everyone can easily:
 
 - Share updates, notes, and announcements
@@ -29,7 +32,7 @@ CampusConnect keeps all this in a single, easy-to-use platform.
 - Upload and download class notes and slides
 - Edit your own profile (photo, name, bio)
 - Simple, mobile-friendly design
-- Dark mode support
+- Dark mode support (Initially planned, will added after)
 
 ---
 
@@ -51,14 +54,5 @@ CampusConnect keeps all this in a single, easy-to-use platform.
 - **Events** – running & upcoming events with details
 - **Notes & Slides** – upload, download, and search study materials
 - **Contact** – basic contact page
-
----
-
-## 👥 About the project
-
-CampusConnect was built by a team of 5 members as part of our Web Engineering course.  
-It’s a learning project meant to practice building a real, useful web application for campus life.
-
-All users have the same type of account — so students, teachers, and staff can equally use every feature.
 
 ---
