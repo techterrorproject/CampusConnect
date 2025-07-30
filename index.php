@@ -1,36 +1,34 @@
 <?php include 'includes/functions.php'; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" class="min-h-screen flex flex-col">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CampusConnect</title>
-  <link rel="stylesheet" href="css/style.css">
+  <?php include 'includes/head.php'; ?>
 </head>
-<body>
-<?php include 'includes/nav.php'; ?>
-<div class="container">
-
-  <section 
-  class="h-64 bg-cover bg-center rounded-xl text-white flex flex-col items-center justify-center"
-  style="background-image: url('https://i.ibb.co/Kj481Bjj/diu-banner.jpg');">
-  <h1 class="text-4xl font-bold">Welcome to CampusConnect</h1>
-  <p class="mt-2 text-lg">Share and download notes & questions for your university easily.</p>
-</section>
-
-
-  <section class="toggle-btns">
-    <button onclick="loadFiles('all')">All</button>
-    <button onclick="loadFiles('Note')">Notes</button>
-    <button onclick="loadFiles('Question')">Questions</button>
-  </section>
-
-  <section id="file-cards" class="grid">
-    <!-- cards will added dynamically -->
-  </section>
-</div>
-<footer>&copy; 2025 CampusConnect</footer>
-<script src="js/script.js"></script>
-<script>
-  window.onload = () => loadFiles('all');
-</script>
+<body class="flex flex-col flex-1">
+    <?php include 'includes/nav.php'; ?>
+    <main class="flex-1 flex flex-col">
+        <div class="text-center max-w-7xl mx-auto w-full">
+          <!-- banner section -->
+            <section class="banner bg-blue-500 p-20 text-white my-5 rounded-lg">
+                <h1 class="font-bold text-4xl">Welcome to CampusConnect</h1>
+                <p>Share and Download notes & questions for your university easily.</p>
+            </section>
+            <!-- toggle-buttons -->
+            <section class="flex gap-4 justify-center">
+                <button class="bg-blue-500 text-white rounded-sm px-4 py-1">All</button>
+                <button class="bg-blue-500 text-white rounded-sm px-4 py-1">Notes</button>
+                <button class="bg-blue-500 text-white rounded-sm px-4 py-1">Questions</button>
+            </section>
+            <!-- all files -->
+            <section>
+              <!-- cards go here -->
+            </section>
+        </div>
+    </main>
+    <hr class="my-5">
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
