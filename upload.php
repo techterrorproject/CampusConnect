@@ -1,20 +1,36 @@
 <?php
 include 'includes/functions.php';
-if(!isset($_SESSION['user'])) header('Location: login.php');
+if (!isset($_SESSION['user'])) header('Location: login.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Upload - CampusConnect</title>
-  <link rel="stylesheet" href="css/style.css">
+  <?php include 'includes/head.php'; ?>
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen flex flex-col">
 <?php include 'includes/nav.php'; ?>
-<div class="container" style="text-align:center; margin-top: 50px;">
-  <h2>Select Upload Type</h2>
-  <button onclick="location.href='upload_note.php'" style="padding:10px 20px; margin: 10px;">Upload Note</button>
-  <button onclick="location.href='upload_question.php'" style="padding:10px 20px; margin: 10px;">Upload Question</button>
+
+<div class="flex flex-1 items-center justify-center p-6">
+  <div class="bg-white shadow-xl rounded-2xl max-w-md w-full p-8 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Select Upload Type</h2>
+    
+    <div class="flex flex-col space-y-6">
+      <button 
+        onclick="location.href='upload_note.php'"
+        class="py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+        Upload Note
+      </button>
+
+      <button 
+        onclick="location.href='upload_question.php'"
+        class="py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition">
+        Upload Question
+      </button>
+    </div>
+  </div>
 </div>
-<footer>&copy; 2025 CampusConnect</footer>
+
+<?php include 'includes/footer.php'; ?>
 </body>
 </html>
