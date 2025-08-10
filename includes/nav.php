@@ -8,10 +8,12 @@
         </a>
     </div>
     <div class="flex items-center gap-2 my-2 md:my-0">
-        <input class="bg-white text-gray-700 placeholder-gray-400 border border-gray-300 rounded-md px-3 py-1 w-32 md:w-48 focus:outline-none focus:ring-2 focus:ring-white" type="text" name="search" id="search" placeholder="Search...">
-
-        <input class="bg-white text-sky-500 font-semibold rounded-md px-3 py-1 hover:bg-sky-100 transition" type="submit" value="Search">
+        <form action="search.php" method="GET" class="flex items-center gap-2 my-2 md:my-0">
+            <input class="bg-white text-gray-700 placeholder-gray-400 border border-gray-300 rounded-md px-3 py-1 w-32 md:w-48 focus:outline-none focus:ring-2 focus:ring-white" type="text" name="q" placeholder="Search..." value="<?php if(isset($_GET['q'])) echo htmlspecialchars($_GET['q']); ?>">
+            <input class="bg-white text-sky-500 font-semibold rounded-md px-3 py-1 hover:bg-sky-100 transition" type="submit" value="Search">
+        </form>
     </div>
+    
     <div class="flex gap-4 text-white text-sm md:text-base mt-2 md:mt-0">
         <a class="hover:underline" href="index.php">Home</a>
         <a class="hover:underline" href="#">Notes</a>
