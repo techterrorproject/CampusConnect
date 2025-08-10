@@ -38,27 +38,29 @@ $run = mysqli_query($conn, $query);
         <section id="file-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-6">
             <?php if(mysqli_num_rows($run) > 0){ ?>
                 <?php while($file = mysqli_fetch_assoc($run)) { ?>
-                    <div class="card">
-                        <h3><?php echo htmlspecialchars($file['course_title']); ?></h3>
-                        <?php if(!empty($file['description'])) { ?>
-                            <p><?php echo nl2br(htmlspecialchars($file['description'])); ?></p>
-                        <?php } ?>
-                        <small>
-                            Code: <?php echo htmlspecialchars($file['course_code']); ?> |
-                            Dept: <?php echo htmlspecialchars($file['department']); ?><br>
-                            Level: <?php echo htmlspecialchars($file['level']); ?> |
-                            Term: <?php echo htmlspecialchars($file['term']); ?> |
-                            Year: <?php echo htmlspecialchars($file['year']); ?><br>
-                            Batch: <?php echo htmlspecialchars($file['batch']); ?> |
-                            Semester: <?php echo htmlspecialchars($file['semester']); ?><br>
-                            Type: <?php echo htmlspecialchars($file['file_type']); ?> |
-                            Exam: <?php echo htmlspecialchars($file['exam_type']); ?><br>
-                            Uploaded By: <?php echo htmlspecialchars($file['first_name'].' '.$file['last_name']); ?> at <?php echo $file['uploaded_at']; ?>
-                        </small>
-                        <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] == $file['uploaded_by']) { ?>
-                            <br><a href="delete_file.php?id=<?php echo $file['id']; ?>" onclick="return confirm('Are you sure you want to delete this file?')">Delete</a>
-                        <?php } ?>
-                        <br><a href="download.php?id=<?php echo $file['id']; ?>">Download</a>
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col justify-between border-l-4 border-blue-500">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-gray-800"><?= htmlspecialchars($file['course_title']); ?></h3>
+                            <?php if(!empty($file['description'])) { ?>
+                                <p class="text-gray-600 mb-4 text-sm leading-relaxed"><?= nl2br(htmlspecialchars($file['description'])); ?></p>
+                            <?php } ?>
+                            <ul class="text-gray-500 text-xs space-y-1 mb-4">
+                                <li><strong>Code:</strong> <?= htmlspecialchars($file['course_code']); ?> | <strong>Dept:</strong> <?= htmlspecialchars($file['department']); ?></li>
+                                <li><strong>Level:</strong> <?= htmlspecialchars($file['level']); ?> | <strong>Term:</strong> <?= htmlspecialchars($file['term']); ?> | <strong>Year:</strong> <?= htmlspecialchars($file['year']); ?></li>
+                                <li><strong>Batch:</strong> <?= htmlspecialchars($file['batch']); ?> | <strong>Semester:</strong> <?= htmlspecialchars($file['semester']); ?></li>
+                                <li><strong>Type:</strong> <?= htmlspecialchars($file['file_type']); ?> | <strong>Exam:</strong> <?= htmlspecialchars($file['exam_type']); ?></li>
+                            </ul>
+                        </div>
+
+                        <div class="flex items-center justify-between text-gray-500 text-xs">
+                            <span>Uploaded by <?= htmlspecialchars($file['first_name'].' '.$file['last_name']); ?> at <?= $file['uploaded_at']; ?></span>
+                            <div class="space-x-4">
+                                <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] == $file['uploaded_by']) { ?>
+                                    <a href="delete_file.php?id=<?= $file['id']; ?>" onclick="return confirm('Are you sure you want to delete this file?')" class="text-red-600 hover:text-red-800 font-semibold">Delete</a>
+                                <?php } ?>
+                                <a href="download.php?id=<?= $file['id']; ?>" class="text-blue-600 hover:text-blue-800 font-semibold">Download</a>
+                            </div>
+                        </div>
                     </div>
                 <?php } ?>
             <?php } else { ?>
