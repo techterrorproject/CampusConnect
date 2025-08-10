@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session before using $_SESSION
+session_start();
 include 'includes/functions.php';
 
 $type = $_GET['type'] ?? 'all';
