@@ -16,8 +16,9 @@
     
     <div class="flex gap-4 text-white text-sm md:text-base mt-2 md:mt-0">
         <a class="hover:underline" href="index.php">Home</a>
-        <a class="hover:underline" href="#">Notes</a>
-        <a class="hover:underline" href="#">Questions</a>
+        <button data-type="Note" class="filter-btn text-white hover:underline bg-transparent p-0 border-0 cursor-pointer">Notes</button>
+        <button data-type="Question" class="filter-btn text-white hover:underline bg-transparent p-0 border-0 cursor-pointer">Questions </button>
+
         <?php if(isset($_SESSION['user'])){ ?>
             <a class="hover:underline" href="upload.php">Upload</a>
             <a class="hover:underline" href="profile.php">Profile</a>
